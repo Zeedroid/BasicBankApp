@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Direct Payment</title>
+    </h:head>
+    <h:body>
+        <h:outputLabel value="Direct Payment Form"/>
+        <br/>
+        <br/>
+        <h:form>
+            <p>Enter User Name You Wish To Make A Payment Too: </p>
+            <h:inputText value="#{directPay.otheruser}" size="80"/>
+            <br/>
+            <br/>
+            <p>Enter Amount You Wish To Pay: </p>
+            <h:inputText value="#{directPay.payment}" label = "Payment" >
+                <f:validateDoubleRange minimum = "0.01" />
+            </h:inputText>           
+            <h:commandButton value="Execute" action="#{directPay.payUser()}"/>
+            <br/>
+            <br/>
+            <h:outputText value="#{directPay.results}"/>
+        </h:form>
+        <br/>
+        <br/>
+        <h:link value="Return" outcome="userIndex"/>
+    </h:body>
+    
+
+</html>
+

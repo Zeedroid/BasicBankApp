@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Accept Requests For Payment</title>
+    </h:head>
+    <h:body>
+        Outstanding Requests For Payment: <h:outputText id="full_name" title="Full Name" value="#{payRequest.fullusername}"/>
+        <br/>
+        <br/>
+        <br/>
+        <h:form>
+        <h:dataTable value="#{payRequest.paymentList}" var="paymentRequest">
+            <h:column>    				
+                <f:facet name="header">Id</f:facet>    				
+                    #{paymentRequest.id}
+            </h:column>
+            <h:column>    				
+                <f:facet name="header">Request From</f:facet>    				
+                    #{paymentRequest.username}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Request To</f:facet>
+                    #{paymentRequest.otheruser}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Transaction Status</f:facet>
+                    #{paymentRequest.status}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Payment Value</f:facet>
+                    #{paymentRequest.otherPayment}
+            </h:column>
+            <h:column>
+                <h:commandButton value="Accept" action="#{payRequest.acceptRequest(paymentRequest.id)}"/>
+            </h:column>
+            <h:column>
+                <h:commandButton value="Reject" action="#{payRequest.rejectRequest(paymentRequest.id)}"/>
+            </h:column>
+        </h:dataTable>
+        <h:outputText value="#{payRequest.results}"/>
+        </h:form>
+
+        <h:button id="alt_back_button" title="Go Back" value="Go Back" outcome="user"/>
+    </h:body>
+</html>

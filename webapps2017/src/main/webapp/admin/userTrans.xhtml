@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>List of All User Transactions</title>
+    </h:head>
+    <h:body>
+        <h:outputLabel value="All User Transactions"/>
+        <br/>
+        <br/>
+        <h:dataTable value="#{userTrans.allTransactions}" var="paymentTransaction">
+            <h:column>    				
+                <f:facet name="header">Id</f:facet>    				
+                    #{paymentTransaction.id}
+            </h:column>
+            <h:column>
+                <f:facet name="header">From User Name</f:facet>
+                    #{paymentTransaction.username}
+            </h:column>
+            <h:column>
+                <f:facet name="header">To User Name</f:facet>
+                    #{paymentTransaction.otheruser}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Payment</f:facet>
+                    #{paymentTransaction.payment}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Direction</f:facet>
+                    #{paymentTransaction.trantype}
+            </h:column>
+        </h:dataTable>
+
+
+        <h:button id="alt_back_button" title="Go Back" value="Go Back" outcome="admin"/>
+    </h:body>
+</html>
+
+

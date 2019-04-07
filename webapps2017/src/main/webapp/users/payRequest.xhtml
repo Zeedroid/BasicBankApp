@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Payment Request</title>
+    </h:head>
+    <h:body>
+        <h:outputLabel value="Payment Request Form"/>
+        <br/>
+        <br/>
+        <h:form>
+            <p>Enter User Name You Wish To Request A Payment From: </p>
+            <h:inputText value="#{payRequest.otheruser}" size="80"/>
+            <br/>
+            <br/>
+            <p>Enter Amount You Wish To Receive: </p>
+            <h:inputText value="#{payRequest.payment}">
+               <f:validateDoubleRange minimum = "0.01" />
+            </h:inputText>
+            <h:commandButton value="Execute" action="#{payRequest.requestPayment()}"/>
+            <br/>
+            <br/>
+            <h:outputText value="#{payRequest.results}"/>
+        </h:form>
+        <br/>
+        <br/>
+        <h:link value="Return" outcome="user"/>
+    </h:body>
+    
+
+</html>

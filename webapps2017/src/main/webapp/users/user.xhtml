@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>User Links</title>
+    </h:head>
+    <h:body>
+        <h:outputLabel value="User Options Form"/>
+        <br/>
+        <br/>
+        <br/>
+        
+        <h:link value="Make a Direct Payment" outcome="payDirect"/>
+        <br/>
+        <br/>
+        <h:link value="Request a Payment" outcome="payRequest"/>
+        <br/>
+        <br/>
+        <h:link value="View Outstanding Requests" outcome="outRequest"/>
+        <br/>
+        <br/>
+        <h:link value="Accept Payment Requests" outcome="acceptRequest"/>
+        <br/>
+        <br/>
+        <h:link value="View all Transactions" outcome="viewTrans"/>
+        <br/>
+        <br/>
+ 
+        <h:link value="Return" outcome="index"/>
+        
+        <h:form>
+            Logout: <h:commandButton value="Logout" action="#{loginBean.logout()}"/>
+        </h:form>
+    </h:body>
+</html>
+

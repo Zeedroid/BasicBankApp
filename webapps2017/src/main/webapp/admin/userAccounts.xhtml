@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>List of Users</title>
+    </h:head>
+    <h:body>
+        List of User Accounts,  Current Administration User: <h:outputText id="full_name" title="Full Name" value="#{userList.fullusername}"/>
+        <br/>
+        <br/>
+        <br/>
+        <h:dataTable value="#{userList.userList}" var="systemUser">
+            <h:column>    				
+                <f:facet name="header">User Name</f:facet>    				
+                    #{systemUser.username}
+            </h:column>
+            <h:column>
+                <f:facet name="header">First Name</f:facet>
+                    #{systemUser.name}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Surname</f:facet>
+                    #{systemUser.surname}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Currency</f:facet>
+                    #{systemUser.currency}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Balance</f:facet>
+                    #{systemUser.balance}
+            </h:column>            
+        </h:dataTable>
+
+
+        <h:button id="alt_back_button" title="Go Back" value="Go Back" outcome="admin"/>
+    </h:body>
+</html>
+

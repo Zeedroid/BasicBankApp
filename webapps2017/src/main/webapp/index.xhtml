@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Online Payment Service</title>
+    </h:head>
+    <h:body>
+        <h:outputLabel value="Welcome To Online Payments Service"/>
+        <br/>
+        <h:link value="Admin Users Login Area" outcome="admin"/>
+        <br/>
+        <br/>
+        
+        <h:link value="Users Login Area" outcome="user"/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        New Users Register <h:link value="here" outcome="registration"/>
+
+        <h:form>
+            Logout: <h:commandButton value="Logout" action="#{loginBean.logout()}"/>
+        </h:form>
+    </h:body>
+</html>

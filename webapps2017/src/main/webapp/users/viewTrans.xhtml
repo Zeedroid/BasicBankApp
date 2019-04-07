@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>User Transactions</title>
+    </h:head>
+    <h:body>
+        Transaction List For: <h:outputText id="full_name" title="Full Name" value="#{userTrans.fullusername}"/>
+        <br/>
+        <br/>
+        <br/>
+        <h:dataTable value="#{userTrans.transactionList}" var="paymentTransaction">
+            <h:column>    				
+                <f:facet name="header">Name</f:facet>    				
+                    #{paymentTransaction.username}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Other User</f:facet>
+                    #{paymentTransaction.otheruser}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Transaction Type</f:facet>
+                    #{paymentTransaction.trantype}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Payment Value</f:facet>
+                    #{paymentTransaction.payment}
+            </h:column>
+        </h:dataTable>
+
+
+        <h:button id="alt_back_button" title="Go Back" value="Go Back" outcome="user"/>
+    </h:body>
+</html>
